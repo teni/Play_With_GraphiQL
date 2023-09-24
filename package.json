@@ -1,0 +1,17 @@
+{
+  "name": "explore-graphql",
+  "version": "1.0.0",
+  "description": "Simple application to allow you explore graphql queries, mutation and graphiql",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Teni Omole",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.8.0"
+  }
+}
