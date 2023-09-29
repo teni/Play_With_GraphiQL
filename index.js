@@ -110,6 +110,20 @@ var schema = new GraphQLSchema ({
         return feed_array
     }
   } ,
+     getFeed : {
+  
+           args:{ id: {
+             type: GraphQLInt 
+           }},
+        type: feedType,
+            resolve: (_, {id}) => {
+             try{
+             return feed_array.filter( (x)=>x.id == id )[0] 
+             }catch (e) {
+                return null;
+            }
+        }
+     } ,
       page: {
           type: new GraphQLList(pageType),
           resolve: () => {
