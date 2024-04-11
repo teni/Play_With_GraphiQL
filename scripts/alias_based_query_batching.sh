@@ -1,3 +1,5 @@
+#!/bin/bash
+
 input_file="password_file"
 i=0;
 alias_part="";
