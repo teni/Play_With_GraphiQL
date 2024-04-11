@@ -7,7 +7,7 @@ while IFS= read -r line
 do
   line_array=($line);
   ((i+=1));
-  alias_part=$alias_part" alias$i : login(username: '${line_array[0]}', password: '${line_array[1]}') {accessToken } \n" ;
+  alias_part=$alias_part" alias$i : login(username: '${line_array[0]}', password: '${line_array[1]}') {accessToken } " ;
 done < "$input_file";
 
 
