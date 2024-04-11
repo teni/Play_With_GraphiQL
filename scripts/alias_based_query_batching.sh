@@ -12,4 +12,4 @@ done < "$input_file";
 
 
 echo $alias_part;
-curl 'http://localhost:5013/graphql' -X POST  -H "Content-Type: application/json" --data-raw "{\"query\":\"\n mutation { $alias_part  }\" }"
+curl 'http://localhost:5013/graphql' -X POST  -H "Content-Type: application/json" --data-raw "{\"query\":\" mutation { $alias_part  }\" }"
