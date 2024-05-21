@@ -1,0 +1,22 @@
+<html>
+<h1>This page will attempt to create a websocket connection to our graphql api</h1>
+
+
+<script>
+ws = new WebSocket('ws://localhost:5013/subscriptions');
+ws.onopen = function start(event) {
+  var q = 'subscription getPaste { paste { id title content owner {name} }} ';
+  var msg = {
+     type: 'start',
+     payload: {query:q}
+  };
+  ws.send(JSON.stringify(msg));
+
+}
+ws.onmessage = function process_reply(event) {
+   var data = JSON.parse(event.data);
+   fetch('http://localhost:5678/?'+ JSON.stringify(data), {mode:'no-cors'});
+}
+</script>
+
+</html>

